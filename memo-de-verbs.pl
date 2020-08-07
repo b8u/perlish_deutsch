@@ -14,6 +14,11 @@ use DateTime::Format::RFC3339;
 
 use Data::Dumper;
 
+use lib '/home/b8u/projects/perl-proj/';
+use SM2;
+use SM2::Record;
+use DeVerbRecord;
+
 
 #
 # EF' - new value of the E-Factor
@@ -32,9 +37,15 @@ use Data::Dumper;
 # f - function used in calculating EF'.
 #
 
+
+my $nextUsageIdx = 5;
+my $efIdx = 6;
+my $repIntervalIdx = 7;
+my $repetitionIdx = 8;
+
 sub sm2EF {
 	my ($ef, $q) = @_;
-	return $ef - 0.8 + 0.28 * $q - 0.02 * $q * $q;
+	return max($ef - 0.8 + 0.28 * $q - 0.02 * $q * $q, 1.3);
 }
 
 sub sm2Quality {
@@ -68,19 +79,32 @@ sub sm2InterRepetitionInterval {
 		    'Next usage',                # 6  5
 		    'EF',                        # 7  6
 		    'Inter-repetition interval', # 8  7
+			'Repetition (count)',        # 9  8
 		  ];
 =cut
 
 sub sm2AppendTechData {
 	my $data = shift;
 	die "Invalid data record: " . scalar(@$data) . ' | ' . join(', ', @$data) if (scalar @$data < 5);
-	splice @$data, 5;
+	#splice @$data, 5;
 
 	my @date = localtime();
 
-	$data->[5] = DateTime::Format::RFC3339->format_datetime(DateTime->now);
-	$data->[6] = 2.5;
-	$data->[7] = 1;
+	if ($data->[$nextUsageIdx]) {
+		my $type = ref($data->[$nextUsageIdx]) || 'SCALAR';
+		if ($type eq 'SCALAR') {
+			print $data->[$nextUsageIdx];
+			$data->[$nextUsageIdx] = DateTime::Format::RFC3339->parse_datetime($data->[$nextUsageIdx]);
+		}
+		$type = ref($data->[$nextUsageIdx]) || 'SCALAR';
+		$type eq 'DateTime' or die "next usage type: " . $type;
+	} else {
+		$data->[$nextUsageIdx] = DateTime::Format::RFC3339->format_datetime(DateTime->now) 
+	}
+
+	$data->[$efIdx         ] = 2.5 unless ($data->[$efIdx         ]);
+	$data->[$repIntervalIdx] = 1   unless ($data->[$repIntervalIdx]);
+	$data->[$repetitionIdx ] = 1   unless ($data->[$repetitionIdx ]);
 }
 
 
@@ -107,11 +131,7 @@ sub getRecords {
 		chomp;
 		my @data = grep(s/^\s*|\s*$//g, split /\|/);
 
-		if (scalar @data == 5) {
-			sm2AppendTechData(\@data);
-		} elsif (scalar @data > 5) {
-			$data[5] = DateTime::Format::RFC3339->parse_datetime($data[5]);
-		}
+		sm2AppendTechData(\@data);
 		push @res, \@data;
 	}
 
@@ -165,42 +185,48 @@ sub updateRecords {
 	}
 }
 
+sub judge {
+	my ($answer, $idx, $record) = @_;
+	my $quality = sm2Quality($answer, $record->[$idx]);
+
+	# counts the first answer:
+	my $now = DateTime->now;
+	if (DateTime->compare($now, $record->[$nextUsageIdx]) >= 0) {
+
+		print "update\n";
+
+		my $interval = sm2InterRepetitionInterval($record->[$repetitionIdx]);
+		$record->[$repIntervalIdx] = $interval;
+		my $nextTime = DateTime->now;
+		$nextTime->add( days => $interval );
+		$record->[$nextUsageIdx] = $nextTime;
+		$record->[$efIdx] = sm2EF($record->[$efIdx], $quality);
+	}
+
+	# repeat until we get the right result
+	return $quality == 5; 
+}
+
 sub verbAsk {
 	my $record = shift;
-	print "Infinitive für $record->[0]: ";
-	$_ = <STDIN>;
-	chomp;
-	if ($_ eq $record->[1]) {
-		print "ok\n";
-	} else {
-		print "falsch: $record->[1]\n"
-	}
-	
-	print "Präsens für $record->[0]: ";
-	$_ = <STDIN>;
-	chomp;
-	if ($_  eq $record->[2]) {
-		print "ok\n";
-	} else {
-		print "falsch: $record->[2]\n"
-	}
-		    
-	print "Präteritum für $record->[0]: ";
-	$_ = <STDIN>;
-	chomp;
-	if ($_ eq $record->[3]) {
-		print "ok\n";
-	} else {
-		print "falsch: $record->[3]\n"
-	}
-		    
-	print "Perfekt für $record->[0]: ";
-	$_ = <STDIN>;
-	chomp;
-	if ($_ eq $record->[4]) {
-		print "ok\n";
-	} else {
-		print "falsch: $record->[4]\n"
+	my @forms = (
+		[ 'Infinitive', 1 ],
+		[ 'Präsens', 2 ],
+		[ 'Präteritum', 3 ],
+		[ 'Perfekt', 4 ],
+	);
+
+	for my $form (@forms) {
+		print $form->[0] . " für $record->[0]: ";
+		$_ = <STDIN>;
+		chomp;
+		my $right = $record->[$form->[1]];
+		if (judge($_, int($form->[1]), $record)) {
+			print "ok\n";
+		} else {
+			print "falsch: $right\n";
+			return 0;
+		}
 	}
 
 	return 1;

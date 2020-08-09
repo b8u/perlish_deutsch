@@ -10,6 +10,11 @@ use DateTime::Format::RFC3339;
 use Text::JaroWinkler qw( strcmp95 );
 use List::Util qw( min max );
 
+=pod
+This is a base class for various tests. It contains only technical data
+to select a learning window.
+=cut
+
 sub new {
 	my ($class, $args) = @_;
 	if (not defined $args) {
@@ -41,7 +46,7 @@ sub update {
 	$self->{nextRepetition} = $now;
 }
 
-sub parse_array {
+sub parseArray {
 	my $self = shift;
 
 	return unless (scalar @_);
@@ -61,10 +66,20 @@ sub parse_array {
 	return 1;
 }
 
+sub toArray {
+	my $self = shift;
+	return ( $self->ef, $self->repetition, $self->nextRepetitionString );
+}
+
+sub toString {
+	join(' | ', shift->toArray);
+}
+
 # Getters:
-sub ef             { return shift->{ef};             }
-sub repetition     { return shift->{repetition};     }
-sub nextRepetition { return shift->{nextRepetition}; }
+sub ef             { shift->{ef};             }
+sub repetition     { shift->{repetition};     }
+sub nextRepetition { shift->{nextRepetition}; }
+sub nextRepetitionString { DateTime::Format::RFC3339->format_datetime(shift->nextRepetition); }
 
 # Static functions:
 sub interval {

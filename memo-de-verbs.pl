@@ -4,19 +4,16 @@ use warnings;
 use strict;
 use utf8::all;
 
-use String::Util qw( trim );
+# use String::Util qw( trim );
 use Text::Table;
-use Text::JaroWinkler qw( strcmp95 );
-use List::Util qw( min max );
+#use Text::JaroWinkler qw( strcmp95 );
+#use List::Util qw( min max );
 
 use DateTime;
-use DateTime::Format::RFC3339;
 
 use Data::Dumper;
 
 use lib '/home/b8u/projects/perl-proj/';
-use SM2;
-use SM2::Record;
 use DeVerbRecord;
 
 
@@ -123,16 +120,13 @@ sub getRecords {
 
 	open(my $file, '<', $filePath) or die $!;
 
-	# the file has the following structure:
-	# translation|\s+verb form 1|\s+verb form 2|\s+verb form 3|\s+tech data
-	
 	my @res;
 	while (<$file>) {
 		chomp;
 		my @data = grep(s/^\s*|\s*$//g, split /\|/);
-
-		sm2AppendTechData(\@data);
-		push @res, \@data;
+		my $record = DeVerbRecord->new;
+		$record->parseArray(@data);
+		push @res, $record;
 	}
 
 	close $file;
@@ -147,12 +141,13 @@ sub setRecords {
 	open(my $file, '>', $filePath) or die $!;
 
 	my $table = Text::Table->new();
-	my @tbData = @$data;
-	foreach my $v (@tbData) {
-		my @raw = grep(s/^\s*|\s*$//g, split "\f", join "\f|\f", @$v);
-		$v = \@raw;
+	my @tbData = ();
+	foreach my $v (@$data) {
+		my @recordArray = split "\f", join("\f|\f", $v->toArray);
+		push @tbData, \@recordArray;
 	}
 	$table->load(@tbData);
+	print $table;
 
 	print $file $table->table;
 	close $file
@@ -235,18 +230,24 @@ sub verbAsk {
 sub main {
 	my $fileName = "verbs.txt";
 	my $res = getRecords($fileName);
-	my @window = getWindow($res, 5);
-	my @done;
-	while (scalar @window) {
-		my $top = shift @window;
-		unless (verbAsk($top)) {
-			push @window, $top;
-		} else {
-			push @done, $top;
-		}
-	}
-	updateRecords($res, \@done);
+
+	# for my $record ($res) {
+	# 	print $record->toString, "\n";
+	# }
+
+	# my @window = getWindow($res, 5);
+	# my @done;
+	# while (scalar @window) {
+	# 	my $top = shift @window;
+	# 	unless (verbAsk($top)) {
+	# 		push @window, $top;
+	# 	} else {
+	# 		push @done, $top;
+	# 	}
+	# }
+	# updateRecords($res, \@done);
 	setRecords($fileName, $res);
+
 }
 
 main();

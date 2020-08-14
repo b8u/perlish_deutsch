@@ -1,0 +1,16 @@
+выплевывать        | speien    | speit    | spie    | hat gespien     | 2.5 | 2 | 2020-08-20T17:06:02Z
+подниматься        | steigen   | steigt   | stieg   | ist gestiegen   | 2.6 | 2 | 2020-08-20T18:34:17Z
+гнать              | treiben   | treibt   | trieb   | ist getrieben   | 2.5 | 1 | 2020-08-12T19:18:13Z
+прощать            | verzeihen | verzeiht | verzieh | hat verziehen   | 2.5 | 1 | 2020-08-12T19:18:13Z
+указывать          | weisen    | weist    | wies    | hat gewiesen    | 2.5 | 1 | 2020-08-12T19:18:13Z
+оставаться         | bleiben   | bleibt   | blieb   | ist geblieben   | 2.5 | 1 | 2020-08-12T19:18:13Z
+расти, преуспевать | gedeihen  | gedeiht  | gedieh  | ist gediehen    | 2.5 | 1 | 2020-08-12T19:18:13Z
+одалживать         | leihen    | leiht    | lieh    | hat geliehen    | 2.5 | 1 | 2020-08-12T19:18:13Z
+избегать           | meiden    | meidet   | mied    | hat gemieden    | 2.5 | 1 | 2020-08-12T19:18:13Z
+хвалить            | preisen   | preist   | pries   | hat gepriesen   | 2.5 | 1 | 2020-08-12T19:18:13Z
+тереть             | reiben    | reibt    | rieb    | hat gerieben    | 2.5 | 1 | 2020-08-12T19:18:13Z
+разделять          | scheiden  | scheidet | schied  | hat geschieden  | 2.5 | 1 | 2020-08-12T19:18:13Z
+светить, сиять     | scheinen  | scheint  | schien  | hat geschienen  | 2.5 | 1 | 2020-08-12T19:18:13Z
+писать             | schreiben | schreibt | schrieb | hat geschrieben | 2.5 | 1 | 2020-08-12T19:18:13Z
+кричать            | schreien  | schreit  | schrie  | hat geschrien   | 2.5 | 1 | 2020-08-12T19:18:13Z
+молчать            | schweigen | schweigt | schwieg | hat geschwiegen | 2.5 | 1 | 2020-08-12T19:18:13Z

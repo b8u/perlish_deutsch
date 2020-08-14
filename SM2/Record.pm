@@ -10,6 +10,8 @@ use DateTime::Format::RFC3339;
 use Text::JaroWinkler qw( strcmp95 );
 use List::Util qw( min max );
 
+use Devel::StackTrace;
+
 =pod
 This is a base class for various tests. It contains only technical data
 to select a learning window.
@@ -39,18 +41,21 @@ sub update {
 	# just the first update counts
 	return if (DateTime->compare($self->nextRepetition, $now) > 0);
 
-	$self->{ef} = max($self->{ef} - 0.8 + 0.28 * $q - 0.02 * $q * $q, 1.3);
-	$self->{repetition} += 1;
-	
-	$now->add( days => interval($self->{repetition}) );
+	$self->ef(max($self->ef - 0.8 + 0.28 * $q - 0.02 * $q * $q, 1.3));
+	$self->repetition($self->repetition + 1);
+	$now->add( days => interval($self->repetition, $self->ef) );
 	$self->{nextRepetition} = $now;
+
+	print $self->toString, "\n";
 }
 
 sub parseArray {
 	my $self = shift;
 
-	return unless (scalar @_);
-	my $nextUsage = shift;
+	return unless (scalar @_); # we need all args
+
+	my ($ef, $repetition, $nextUsage) = @_;
+
 	if (ref($nextUsage eq 'DateTime')) {
 		$self->{nextRepetition} = $nextUsage;
 	} else {
@@ -58,10 +63,10 @@ sub parseArray {
 	}
 
 	return unless (scalar @_);
-	$self->{ef} = shift;
+	$self->{ef} = $ef;
 
 	return unless (scalar @_);
-	$self->{repetition} = shift;
+	$self->{repetition} = $repetition;
 
 	return 1;
 }
@@ -76,14 +81,42 @@ sub toString {
 }
 
 # Getters:
-sub ef             { shift->{ef};             }
-sub repetition     { shift->{repetition};     }
-sub nextRepetition { shift->{nextRepetition}; }
+sub ef {
+	my $self = shift;
+	if (scalar @_ == 1) {
+		$self->{ef} = shift;
+	} else {
+		return $self->{ef};
+	}
+}
+
+sub repetition {
+	my $self = shift;
+	if (scalar @_ == 1) {
+		$self->{repetition} = shift;
+	} else {
+		return $self->{repetition};
+	} 
+}
+
+sub nextRepetition {
+	my $self = shift;
+	if (scalar @_ == 1) {
+		$self->{nextRepetition} = shift;
+	} else {
+		return $self->{nextRepetition};
+	} 
+}
+
 sub nextRepetitionString { DateTime::Format::RFC3339->format_datetime(shift->nextRepetition); }
 
 # Static functions:
 sub interval {
 	my ($repetition, $ef) = @_;
+	# print Devel::StackTrace->new->as_string;
+
+	# print "repetition: $repetition, ef: $ef\n";
+	$repetition < 3 or die;
 
 	return 1 if ($repetition == 1);
 	return 6 if ($repetition == 2);

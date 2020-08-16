@@ -42,9 +42,9 @@ sub update {
 	return if (DateTime->compare($self->nextRepetition, $now) > 0);
 
 	$self->ef(max($self->ef - 0.8 + 0.28 * $q - 0.02 * $q * $q, 1.3));
-	$self->repetition($self->repetition + 1);
 	$now->add( days => interval($self->repetition, $self->ef) );
 	$self->{nextRepetition} = $now;
+	$self->repetition($self->repetition + 1);
 
 	print $self->toString, "\n";
 }

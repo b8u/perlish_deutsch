@@ -1,16 +1,33 @@
-выплевывать        | speien    | speit    | spie    | hat gespien     | 2.5 | 2 | 2020-08-20T17:06:02Z
-подниматься        | steigen   | steigt   | stieg   | ist gestiegen   | 2.6 | 2 | 2020-08-20T18:34:17Z
-гнать              | treiben   | treibt   | trieb   | ist getrieben   | 2.5 | 1 | 2020-08-12T19:18:13Z
-прощать            | verzeihen | verzeiht | verzieh | hat verziehen   | 2.5 | 1 | 2020-08-12T19:18:13Z
-указывать          | weisen    | weist    | wies    | hat gewiesen    | 2.5 | 1 | 2020-08-12T19:18:13Z
-оставаться         | bleiben   | bleibt   | blieb   | ist geblieben   | 2.5 | 1 | 2020-08-12T19:18:13Z
-расти, преуспевать | gedeihen  | gedeiht  | gedieh  | ist gediehen    | 2.5 | 1 | 2020-08-12T19:18:13Z
-одалживать         | leihen    | leiht    | lieh    | hat geliehen    | 2.5 | 1 | 2020-08-12T19:18:13Z
-избегать           | meiden    | meidet   | mied    | hat gemieden    | 2.5 | 1 | 2020-08-12T19:18:13Z
-хвалить            | preisen   | preist   | pries   | hat gepriesen   | 2.5 | 1 | 2020-08-12T19:18:13Z
-тереть             | reiben    | reibt    | rieb    | hat gerieben    | 2.5 | 1 | 2020-08-12T19:18:13Z
-разделять          | scheiden  | scheidet | schied  | hat geschieden  | 2.5 | 1 | 2020-08-12T19:18:13Z
-светить, сиять     | scheinen  | scheint  | schien  | hat geschienen  | 2.5 | 1 | 2020-08-12T19:18:13Z
-писать             | schreiben | schreibt | schrieb | hat geschrieben | 2.5 | 1 | 2020-08-12T19:18:13Z
-кричать            | schreien  | schreit  | schrie  | hat geschrien   | 2.5 | 1 | 2020-08-12T19:18:13Z
-молчать            | schweigen | schweigt | schwieg | hat geschwiegen | 2.5 | 1 | 2020-08-12T19:18:13Z
+выплевывать               | speien     | speit     | spie    | hat gespien     | 2.5 | 2 | 2020-08-20T17:06:02Z
+подниматься               | steigen    | steigt    | stieg   | ist gestiegen   | 2.6 | 2 | 2020-08-20T18:34:17Z
+гнать                     | treiben    | treibt    | trieb   | ist getrieben   | 2.6 | 2 | 2020-08-20T19:55:36Z
+прощать                   | verzeihen  | verzeiht  | verzieh | hat verziehen   | 2.5 | 2 | 2020-08-20T19:55:48Z
+указывать                 | weisen     | weist     | wies    | hat gewiesen    | 2.5 | 2 | 2020-08-20T19:56:30Z
+оставаться                | bleiben    | bleibt    | blieb   | ist geblieben   | 2.5 | 2 | 2020-08-20T19:57:12Z
+расти, преуспевать        | gedeihen   | gedeiht   | gedieh  | ist gediehen    | 2.5 | 2 | 2020-08-20T19:57:48Z
+одалживать                | leihen     | leiht     | lieh    | hat geliehen    | 2.5 | 2 | 2020-08-20T20:18:31Z
+избегать                  | meiden     | meidet    | mied    | hat gemieden    | 2.5 | 2 | 2020-08-20T20:18:45Z
+хвалить                   | preisen    | preist    | pries   | hat gepriesen   | 2.5 | 2 | 2020-08-20T20:18:52Z
+тереть                    | reiben     | reibt     | rieb    | hat gerieben    | 1.7 | 2 | 2020-08-20T20:19:17Z
+разделять                 | scheiden   | scheidet  | schied  | hat geschieden  | 2.5 | 2 | 2020-08-20T20:19:33Z
+светить, сиять            | scheinen   | scheint   | schien  | hat geschienen  | 2.6 | 2 | 2020-08-20T20:23:41Z
+писать                    | schreiben  | schreibt  | schrieb | hat geschrieben | 2.6 | 2 | 2020-08-20T20:24:01Z
+кричать                   | schreien   | schreit   | schrie  | hat geschrien   | 2.5 | 2 | 2020-08-20T20:24:12Z
+молчать                   | schweigen  | schweigt  | schwieg | hat geschwiegen | 2.5 | 2 | 2020-08-20T20:24:42Z
+кусать                    | beißen     | beißt     | biß     | hat gebissen    | 1.7 | 2 | 2020-08-17T13:46:44Z
+выравнивать               | gleichen   | gleicht   | glich   | hat geglichen   | 1.7 | 2 | 2020-08-17T13:49:53Z
+скользить                 | gleiten    | gleitet   | glitt   | ist geglitten   | 1.7 | 2 | 2020-08-17T13:50:12Z
+браться (за что-то)       | greifen    | greift    | griff   | hat gegriffen   | 1.7 | 2 | 2020-08-17T13:50:18Z
+уклоняться, уворачиваться | weichen    | weicht    | wich    | ist gewichen    | 1.7 | 2 | 2020-08-17T13:50:35Z
+щипать                    | kneifen    | kneift    | kniff   | hat gekniffen   | 1.7 | 2 | 2020-08-17T14:06:24Z
+страдать, терпеть         | leiden     | leidet    | litt    | hat gelitten    | 2.6 | 2 | 2020-08-17T14:06:40Z
+свистеть                  | pfeifen    | pfeift    | pfiff   | hat gepfiffen   | 2.6 | 2 | 2020-08-17T14:07:03Z
+рвать                     | reißen     | reißt     | riss    | hat gerissen    | 2.6 | 2 | 2020-08-17T14:07:20Z
+ездить верхом             | reiten     | reitet    | ritt    | ist geritten    | 2.6 | 2 | 2020-08-17T14:07:38Z
+красться                  | schleichen | schleicht | schlich | ist geschlichen | 1.7 | 2 | 2020-08-17T14:08:10Z
+точить                    | schleifen  | schleift  | schliff | hat geschliffen | 1.7 | 2 | 2020-08-17T14:08:20Z
+кидать, бросать           | schmeißen  | schmeißt  | schmiss | hat geschmissen | 1.7 | 2 | 2020-08-17T14:08:28Z
+резать                    | schneiden  | schneidet | schnitt | hat geschnitten | 2.6 | 2 | 2020-08-17T14:09:21Z
+шагать                    | schreiten  | schreitet | schritt | ist geschritten | 1.7 | 2 | 2020-08-17T14:09:29Z
+спорить                   | streiten   | streitet  | stritt  | hat gestritten  | 1.7 | 2 | 2020-08-17T14:13:58Z
+гладить                   | streichen  | streicht  | strich  | hat gestrichen  | 1.7 | 2 | 2020-08-17T14:14:09Z

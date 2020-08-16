@@ -8,6 +8,7 @@ use String::Util qw( trim );
 use Text::Table;
 use Text::JaroWinkler qw( strcmp95 );
 use List::Util qw( min max );
+use File::Copy;
 
 use DateTime;
 
@@ -117,13 +118,14 @@ sub updateRecords {
 sub verbAsk {
 	my $record = shift;
 	my @forms = (
-		[ 'Infinitive', $record->infinitive  ],
-		[ 'Präsens',    $record->praesens    ],
+		[ 'Infinitive (wie ...)', $record->infinitive  ],
+		[ 'Präsens (er/sie/es ...)',    $record->praesens    ],
 		[ 'Präteritum', $record->praeteritum ],
 		[ 'Perfekt',    $record->perfekt     ],
 	);
 
 	my $quality = 0;
+	my $i = 1;
 	for my $form (@forms) {
 		print $form->[0] . ' für ' . $record->translation . ': ';
 		$_ = <STDIN>;
@@ -134,8 +136,11 @@ sub verbAsk {
 			print "ok\n";
 		} else {
 			print "falsch: $right\n";
+			$quality = 0 unless ($i == scalar @forms);
 			last;
 		}
+
+		++$i;
 	}
 
 	$record->update($quality);
@@ -145,6 +150,13 @@ sub verbAsk {
 
 sub main {
 	my $fileName = "verbs.txt";
+	my $backupName = $fileName . '.backup';
+
+	# Backup
+	print "backup files: $fileName > $backupName\n";
+	copy($fileName, $backupName) or die "Copy failed: $!";
+
+
 	my $res = getRecords($fileName);
 	my @window = getWindow($res, 5);
 	my @done;

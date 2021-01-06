@@ -11,6 +11,7 @@ use Text::JaroWinkler qw( strcmp95 );
 use List::Util qw( min max );
 
 use Devel::StackTrace;
+use Data::Dumper;
 
 =pod
 This is a base class for various tests. It contains only technical data
@@ -37,16 +38,18 @@ sub new {
 sub update { 
 	my ($self, $q) = @_;
 
+	#print Dumper($self, $q);
+
 	my $now = DateTime->now;
 	# just the first update counts
 	return if (DateTime->compare($self->nextRepetition, $now) > 0);
 
 	$self->ef(max($self->ef - 0.8 + 0.28 * $q - 0.02 * $q * $q, 1.3));
+
+	#print 'Record::update, self: ', Dumper($self);
 	$now->add( days => interval($self->repetition, $self->ef) );
 	$self->{nextRepetition} = $now;
 	$self->repetition($self->repetition + 1);
-
-	print $self->toString, "\n";
 }
 
 sub parseArray {
@@ -113,15 +116,15 @@ sub nextRepetitionString { DateTime::Format::RFC3339->format_datetime(shift->nex
 # Static functions:
 sub interval {
 	my ($repetition, $ef) = @_;
-	# print Devel::StackTrace->new->as_string;
+	#print Devel::StackTrace->new->as_string;
 
-	# print "repetition: $repetition, ef: $ef\n";
-	$repetition < 3 or die;
+	#print 'dump: ', Dumper(\@_);
+	#print "repetition: $repetition, ef: $ef\n";
 
 	return 1 if ($repetition == 1);
 	return 6 if ($repetition == 2);
 
-	return interval($repetition - 1) * $ef;
+	return interval($repetition - 1, $ef) * $ef;
 }
 
 =pod

@@ -9,7 +9,7 @@ our @EXPORT = qw/sm2Quality getRecords setRecords getWindow updateRectords/;
 use String::Util qw( trim );
 use Text::Table;
 use Text::JaroWinkler qw( strcmp95 );
-use List::Util qw( min max );
+use List::Util qw( min max shuffle);
 use DateTime;
 
 use lib '/home/b8u/projects/perl-proj/';
@@ -37,6 +37,8 @@ sub getRecords {
 	}
 
 	close $file;
+
+	@res = shuffle @res;
 
 	return \@res;
 }

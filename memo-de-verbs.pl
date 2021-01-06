@@ -27,7 +27,7 @@ sub verbAsk {
 		$_ = <STDIN>;
 		chomp;
 		my $right = $form->[1];
-		$quality = sm2Quality($_, $right);
+		$quality = TestFunctions::sm2Quality($_, $right);
 		if ($quality == 5) {
 			print "ok\n";
 		} else {

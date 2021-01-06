@@ -1,0 +1,61 @@
+выравнивать               | gleichen   | gleicht   | glich   | hat geglichen   | 1.3  | 6 | 2021-01-19T10:56:53Z
+рвать                     | reißen     | reißt     | riss    | hat gerissen    | 1.3  | 5 | 2021-01-16T10:56:59Z
+щипать                    | kneifen    | kneift    | kniff   | hat gekniffen   | 1.3  | 5 | 2021-01-16T10:56:55Z
+рекламировать             | werben     | wirbt     | warb    | hat geworben    | 1.8  | 3 | 2020-09-01T19:25:53Z
+скользить                 | gleiten    | gleitet   | glitt   | ist geglitten   | 1.3  | 5 | 2021-01-16T11:56:50Z
+писать                    | schreiben  | schreibt  | schrieb | hat geschrieben | 2.7  | 3 | 2020-08-30T19:20:38Z
+выздоравливать            | genesen    | genest    | genas   | ist genesen     | 1.3  | 5 | 2021-01-16T11:56:49Z
+стрелять                  | schießen   | schießt   | schoss  | hat geschossen  | 1.3  | 3 | 2020-09-04T19:42:44Z
+расти, преуспевать        | gedeihen   | gedeiht   | gedieh  | ist gediehen    | 1.7  | 3 | 2020-08-30T19:12:05Z
+рекомендовать             | empfehlen  | empfiehlt | empfahl | hat empfohlen   | 1.7  | 3 | 2020-08-31T20:35:21Z
+резать                    | schneiden  | schneidet | schnitt | hat geschnitten | 1.9  | 5 | 2021-01-27T11:56:51Z
+создавать                 | schaffen   | schafft   | schuf   | hat geschaffen  | 1.3  | 3 | 2020-09-04T19:43:02Z
+воровать                  | stehlen    | stiehlt   | stahl   | hat gestohlen   | 1.3  | 3 | 2020-09-01T19:21:33Z
+встречать                 | treffen    | trifft    | traf    | hat getroffen   | 1.3  | 3 | 2020-09-01T19:26:22Z
+спорить                   | streiten   | streitet  | stritt  | hat gestritten  | 1.3  | 5 | 2021-01-16T10:58:56Z
+оставаться                | bleiben    | bleibt    | blieb   | ist geblieben   | 2.6  | 3 | 2020-08-30T19:11:59Z
+бить, ударять             | schlagen   | schlägt   | schlug  | hat geschlagen  | 1.3  | 3 | 2020-09-04T19:55:22Z
+колоть                    | stechen    | sticht    | stach   | ist gestochen   | 1.3  | 3 | 2020-09-01T19:25:38Z
+разделять                 | scheiden   | scheidet  | schied  | hat geschieden  | 1.7  | 3 | 2020-08-30T19:15:47Z
+ломать                    | brechen    | bricht    | brach   | hat gebrochen   | 1.8  | 3 | 2020-08-31T20:35:09Z
+портить                   | verderben  | verdirbt  | verdarb | hat verdorben   | 1.56 | 3 | 2020-09-01T19:18:09Z
+ездить верхом             | reiten     | reitet    | ritt    | ist geritten    | 1.3  | 5 | 2021-01-16T11:21:15Z
+кидать, бросать           | schmeißen  | schmeißt  | schmiss | hat geschmissen | 1.3  | 5 | 2021-01-16T11:33:32Z
+подниматься               | steigen    | steigt    | stieg   | ist gestiegen   | 2.7  | 3 | 2020-08-30T19:16:44Z
+уклоняться, уворачиваться | weichen    | weicht    | wich    | ist gewichen    | 1.3  | 5 | 2021-01-16T10:58:59Z
+прощать                   | verzeihen  | verzeiht  | verzieh | hat verziehen   | 1.7  | 3 | 2020-08-30T19:09:05Z
+лопнуть                   | bersten    | birst     | barst   | ist geborsten   | 1.7  | 3 | 2020-08-31T20:34:47Z
+светить, сиять            | scheinen   | scheint   | schien  | hat geschienen  | 2.7  | 3 | 2020-08-30T19:20:19Z
+молчать                   | schweigen  | schweigt  | schwieg | hat geschwiegen | 1.7  | 3 | 2020-08-30T19:16:19Z
+стоить, цениться          | gelten     | gilt      | galt    | hat gegolten    | 1.8  | 3 | 2020-09-01T19:17:56Z
+принимать                 | empfangen  | empfängt  | empfing | hat empfangen   | 1.3  | 5 | 2021-01-16T11:33:33Z
+спасть                    | schlafen   | schläft   | schlief | hat geschlafen  | 1.3  | 3 | 2020-09-04T19:55:29Z
+бранить                   | schelten   | schilt    | schalt  | hat gescholten  | 1.3  | 3 | 2020-09-01T19:22:08Z
+умирать                   | sterben    | stirbt    | starb   | ist gestorben   | 1.3  | 3 | 2020-09-01T19:21:07Z
+происходить               | geschehen  | geschieht | geschah | ist geschehen   | 1.56 | 3 | 2020-08-31T20:31:20Z
+свистеть                  | pfeifen    | pfeift    | pfiff   | hat gepfiffen   | 1.3  | 5 | 2021-01-16T10:56:58Z
+толкать, двигать          | schieben   | schiebt   | schob   | hat geschoben   | 1.3  | 3 | 2020-09-04T19:41:59Z
+помогать                  | helfen     | hilft     | half    | hat geholfen    | 1.8  | 3 | 2020-09-01T19:25:32Z
+кусать                    | beißen     | beißt     | biß     | hat gebissen    | 1.3  | 5 | 2021-01-16T10:59:02Z
+брать                     | nehmen     | nimmt     | nahm    | hat genommen    | 1.3  | 3 | 2020-09-01T19:20:56Z
+страдать, терпеть         | leiden     | leidet    | litt    | hat gelitten    | 1.3  | 5 | 2021-01-16T10:56:57Z
+тереть                    | reiben     | reibt     | rieb    | hat gerieben    | 1.3  | 3 | 2020-08-30T19:08:27Z
+хвалить                   | preisen    | preist    | pries   | hat gepriesen   | 1.7  | 3 | 2020-08-30T19:15:26Z
+говорить                  | sprechen   | spricht   | sprach  | hat gesprochen  | 1.8  | 3 | 2020-09-01T19:26:41Z
+одалживать                | leihen     | leiht     | lieh    | hat geliehen    | 2.6  | 3 | 2020-08-30T19:12:25Z
+точить                    | schleifen  | schleift  | schliff | hat geschliffen | 1.3  | 5 | 2021-01-16T11:56:50Z
+спасать                   | bergen     | birgt     | barg    | hat geborgen    | 1.56 | 3 | 2020-08-31T20:34:24Z
+красться                  | schleichen | schleicht | schlich | ist geschlichen | 1.3  | 5 | 2021-01-16T11:33:32Z
+избегать                  | meiden     | meidet    | mied    | hat gemieden    | 2.6  | 3 | 2020-08-30T19:12:46Z
+кричать                   | schreien   | schreit   | schrie  | hat geschrien   | 1.7  | 3 | 2020-08-30T19:15:56Z
+гнать                     | treiben    | treibt    | trieb   | ist getrieben   | 2.7  | 3 | 2020-08-30T19:20:00Z
+приказывать               | befehlen   | befiehlt  | befahl  | hat befohlen    | 1.7  | 3 | 2020-08-31T20:34:07Z
+закрывать                 | schließen  | schließt  | schloss | hat geschlossen | 1.3  | 3 | 2020-09-04T19:42:31Z
+выплевывать               | speien     | speit     | spie    | hat gespien     | 1.7  | 3 | 2020-08-30T19:08:40Z
+забывать                  | vergessen  | vergisst  | vergaß  | hat vergessen   | 1.3  | 5 | 2021-01-16T11:56:48Z
+указывать                 | weisen     | weist     | wies    | hat gewiesen    | 1.7  | 3 | 2020-08-30T19:11:36Z
+шагать                    | schreiten  | schreitet | schritt | ist geschritten | 1.3  | 5 | 2021-01-16T11:33:33Z
+браться (за что-то)       | greifen    | greift    | griff   | hat gegriffen   | 1.3  | 5 | 2021-01-16T10:59:04Z
+гладить                   | streichen  | streicht  | strich  | hat gestrichen  | 1.3  | 5 | 2021-01-16T10:59:00Z
+плыть                     | schwimmen  | schwimmt  | schwamm | ist geschwommen | 1.7  | 3 | 2020-09-04T19:41:49Z
+кидать                    | werfen     | wirft     | warf    | hat geworfen    | 1.3  | 3 | 2020-09-01T19:20:42Z
